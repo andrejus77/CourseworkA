@@ -78,9 +78,9 @@ n_c <- 3
 n_p <- 100
 B0 <- 0
 B1_c <- rnorm(n_c, 0, 3)
-Trump = norm(n_c, -2, 3)
-Hillary = norm(n_c, 0, 4)
-Bernie = norm(n_c, 2, 2)
+Trump <- rnorm(n_p, -2, 3)
+Hillary <- rnorm(n_p, 0, 4)
+Bernie <- rnorm(n_p, 2, 2)
 
 labels=c("Donald Trump", "Hillary Clinton", "Bernie Sanders")
 for (i in 1:n_p) {
