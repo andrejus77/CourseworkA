@@ -23,37 +23,55 @@ knitr::opts_chunk$set(echo = TRUE)
 ## The motivation for the planned research 
 (Max 200 words)
 
+Researchers found that Nicotine caused weight loss in [rats](https://www.sciencedirect.com/science/article/abs/pii/0014299976902016) and then later in [humans](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1360-0443.1991.tb01810.x). Morean and Wedel [noticed](https://www.sciencedirect.com/science/article/pii/S0306460316303781?casa_token=Fuxiv7q95AwAAAAA:obMaLgmaIEyb-eH0Bb-_x-rL0bLz-ox_8eXxWqSw6gScAA7dnlXkUMgyfJO3v2gatjjAPio8Rx0) that 13.5% of adults in USA vape to lose weight.
+
 ## The theory underlying the research  
 (Max 200 words) Preferable based on theories reported in literature
 
+There are a few theories for how Nicotine reduces weight through [Leptin](https://www.sciencedirect.com/science/article/pii/S0195666321001677?casa_token=-HTtrT14rR0AAAAA:KI3zc_yYySluosZSz2MJrDsdsF-yTb8MOIqKaUtYKA6Ug_QOOo1iRGys0zYQweEEf54SRgoESjY), [fight-or-flight receptors](https://www.npr.org/2011/06/09/137085989/the-skinny-on-smoking-why-nicotine-curbs-appetite) but also indications that weight should increase through [Ghrelin](https://www.sciencedirect.com/science/article/pii/S0195666321001677?casa_token=-HTtrT14rR0AAAAA:KI3zc_yYySluosZSz2MJrDsdsF-yTb8MOIqKaUtYKA6Ug_QOOo1iRGys0zYQweEEf54SRgoESjY). However, all of these sources note that there is empirical evidence showing strong correlation between Nicotine consumption and weight loss. We will not go into the different theories in Biology for how this happens. Instead, we noticed that these papers did not always look at how the Nicotine was consumed i.e. through vaping, patches, injection, etc.
 
 ## Research questions 
 The research question that will be examined in an experiment (or alternatively the hypothesis that will be tested in an  experiment)
 
+Research Question: Does consuming Nicotine in different ways cause different amounts of weight loss?
 
 ## The related conceptual model 
 This model should include:
-*Independent variable(s)
-*Dependent variable
-*Mediating variable (at least 1)
-*Moderating variable (at least 1)
+*Independent variable(s): Nicotine consumed each day in gram
+*Dependent variable: Body weight
+*Mediating variable (at least 1): Resistance to Nicotine by body
+*Moderating variable (at least 1): Net calories eaten each day
 
+There are some other variables in the real world that complicate such an experiment. We will ignore diabetes, age, eating restrictions and other conditions like paralysis.
 
 ## Experimental Design 
 Experimental Design (the study should have a true experimental design to test a single hypothesis that, for simplicity, includes only independent variable(s) and dependent variable(s). In other words, mediating and moderating variables are not included in the experimental design ) 
 
+The experiment is to determine if method of consuming Nicotine affects weight loss. All participants will consume nicotine in one of three ways and data collected will be analyzed to check for statistical significance.
+
 ## Experimental procedure 
 Describe how the experiment will be executed step by step
 
+- Start collecting weight data about participants before starting experiment to estabilish normal habits.
+- Start treatment by assigning users to patch, injection and vaping group. All the groups will slowly start consuming Nicotine linearly increasing at the same rate for everybody till a pre-determined level through their respective sources of patch, injection or vape.
+- The nicotine consumed will for all participants on any day will always be the same.
+- Continue collecting weight data and participants should continue their regular schedules as before starting the experiment (eg: if somebody went to the gym twice a week, they should still do that as this will eliminate many variables that can affect body weight)
+- After Nicotine consumption of experiment group has reached pre-determined level, maintain constant nicotine consumption and collect weight data for some more days to confirm the trend
 
 ## Measures
 Describe the measure that will be used
 
+Change in body weight from starting consuming Nicotine.
+
 ## Participants
 Describe which participants will recruit in the study and how they will be recruited
 
+Users that do not consume Nicotine. Users that consume can also be used but there can be other factors involved like the body adapting to the Nicotine and responding less or not responding at all.
+
 ## Suggested statistical analyses
 Describe the statistical test you suggest to care out on the collected data
+
+t-test. Compare weight lost between the three types of consuming nicotine to see if some perform statistically better at losing weight than others.
 
 # Part 2 - Generalized linear models
 
@@ -61,6 +79,8 @@ Describe the statistical test you suggest to care out on the collected data
 
 ### Conceptual model
 Make a conceptual model for the following research question: Is there a difference in the sentiment of the tweets related to the different individuals/organisations?
+
+![](https://i.imgur.com/mohYQDy.png)
 
 ### Model description
 
