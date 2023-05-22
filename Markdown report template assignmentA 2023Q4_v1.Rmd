@@ -422,7 +422,7 @@ models has a positive effect and b has a negative effect.
 ### Conceptual model
 
 ```{r}
-knitr::include_graphics("C:\\GAMES_SETUP\\Q4\\Seminar Research Methodology for Data Science\\Assignments\\A\\assignA\\conceptualmodelQ2.png")
+knitr::include_graphics("conceptualmodelQ2.png")
 ```
 
 According to description of analysis we have to examine whether the
@@ -519,7 +519,7 @@ Graphically examine the mean page visits for the four different
 conditions. Give a short explanation of the figure.
 
 ```{r}
-#knitr::include_graphics("C:\\GAMES_SETUP\\Q4\\Seminar Research Methodology for Data Science\\Assignments\\A\\assignA\\EXPERIMENTdesignQ2.png")
+knitr::include_graphics("EXPERIMENTdesignQ2.png")
 ```
 
 The experiment design consisted of 4 conditions since we have 2 IVs with
@@ -1174,25 +1174,10 @@ plot(compare(m0,m1,m2))
 Examine the estimate of parameters of the model with best fit, and
 provide a brief interpretation.
 
+We can see that all coefficients are above 0 which means they are all relevant for the performance of the model.
 
 
 ```{r}
 #include your code and output in the document
-m2 <- ulam( 
-  alist(
-    #Likelihood
-    score ~ dnorm(mu, sigma),
-    #linear model
-    mu <- a + a_subject[subject] + b*session,
-    #adaptive prior
-    a_subject[subject] ~ dnorm(0, sigma_subject),
-    #hyper prior
-    sigma_subject ~ dcauchy(0, 1),
-    #fixed priors
-    a ~ dnorm(10, 5),
-    b ~ dnorm(0, 1), 
-    sigma ~ dcauchy(0, 1)
-  ), data = set, iter = 10000, chains = 4, cores = 4, log_lik = TRUE, control=list(adapt_delta=.99)
-)
 plot(precis(m2, prob=.95))
 ```
