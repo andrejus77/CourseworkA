@@ -969,9 +969,11 @@ compare(m0PFake,m1PFake,m2PFake,m3PFake,m4PFake) #WAIC
 precis(m4PFake, prob=0.95) #95%  credibility interval of coefficients
 ```
 
-Model m4PFake has the best fit because of the smallest WAIC value.
-The credibility interval for m4PFake shows that the coefficients a,b and
-c are non-null.
+Because of the randomness in data generation either model m3PFake or m4PFake 
+has the best fit because of the smallest WAIC value. The credibility interval 
+for both of them in at least our test showed that shows that the coefficients 
+a,b, c and d are non-null but they can lie close to 0, so it is possible that 
+their range is null.
 
 #### Model comparison
 
@@ -1030,11 +1032,11 @@ precis(m4P, prob=0.95) #95%  credibility interval of coefficients
 plot(m4P)
 ```
 
-Model m4 has the best fit because of the smallest WAIC value of 5565.7,
-this is the same as the previous result we got on synthetic data
-where model 4 was better due to the interaction effect
-between the IVs appears to fit better. The credibility interval shows
-that all coefficients a,b,c and d are non-null.
+Model m4 has the best fit because of the smallest WAIC value of 5565.7, 
+this is different from the previous result we got on synthetic data 
+where model 3 or 4 was better but on the real data, the interaction 
+effect between the IVs appears to fit better. The credibility interval 
+shows that all coefficients a,b,c and d are non null.
 
 # Part 3 - Multilevel model
 
