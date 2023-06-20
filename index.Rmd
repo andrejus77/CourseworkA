@@ -648,10 +648,10 @@ well as their interaction, have a significant impact on the variable
 "pages".
 
 ```{r}
-# AICc for synthetic data
-modelsF <-list(modelF0, modelF1, modelF2, modelF3, modelF4)
-modelF.names <-c("modelF0","modelF1","modelF2","modelF3","modelF4")
-aictab(cand.set = modelsF, modnames=modelF.names)
+# AICc for real data
+models <-list(model0, model1, model2, model3, model4)
+model.names <-c("model0","model1","model2","model3","model4")
+aictab(cand.set = models, modnames=model.names)
 ```
 
 The AICc value for model4 is the lowest which indicates it has the best
