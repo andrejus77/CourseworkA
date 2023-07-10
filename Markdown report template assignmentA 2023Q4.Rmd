@@ -33,45 +33,58 @@ There are a few theories for how Nicotine reduces weight through [<span style="c
 ## Research questions 
 The research question that will be examined in an experiment (or alternatively the hypothesis that will be tested in an  experiment)
 
-Research Question: Does consuming Nicotine in different ways cause different amounts of weight loss?
+Research Question: Does consuming Nicotine through vape cause more weight loss than patch?
 
 ## The related conceptual model 
 This model should include:
-*Independent variable(s): Nicotine consumed each day in gram
-*Dependent variable: Body weight
-*Mediating variable (at least 1): Resistance to Nicotine by body
-*Moderating variable (at least 1): Net calories eaten each day
+
+*Independent variable(s):* Nicotine consumed each day in gram
+Nicotine will be carefully measured and administered to the participant
+
+*Dependent variable:* Body weight
+The body weight of the patient will change and needs to be measured.
+
+*Moderating variable (at least 1):* Resistance to Nicotine by body
+Some people are naturally more resistant to Nicotine than others. To achieve the same effect, different people can require different amounts of Nicotine.
+
+*Mediating variable (at least 1):* Net calories eaten each day
+The net intake of calories (calories eaten - calories used from exercise and other activities) will increase, decrease or will not change body weight.
 
 There are some other variables in the real world that complicate such an experiment. We will ignore diabetes, age, eating restrictions and other conditions like paralysis.
 
+![ConceptualModel](./conceptualmodelq1.png "Conceptual Model")
+
 ## Experimental Design 
-Experimental Design (the study should have a true experimental design to test a single hypothesis that, for simplicity, includes only independent variable(s) and dependent variable(s). In other words, mediating and moderating variables are not included in the experimental design ) 
+Experimental Design (the study should have a true experimental design to test a single hypothesis that, for simplicity, includes only independent variable(s) and dependent variable(s). In other words, mediating and moderating variables are not included in the experimental design) 
 
 The experiment is to determine if method of consuming Nicotine affects weight loss. All participants will consume nicotine in one of three ways and data collected will be analyzed to check for statistical significance.
 
 ## Experimental procedure 
 Describe how the experiment will be executed step by step
 
-- Start collecting weight data about participants before starting experiment to estabilish normal habits.
-- Start treatment by assigning users to patch, injection and vaping group. All the groups will slowly start consuming Nicotine linearly increasing at the same rate for everybody till a pre-determined level through their respective sources of patch, injection or vape.
-- The nicotine consumed will for all participants on any day will always be the same.
-- Continue collecting weight data and participants should continue their regular schedules as before starting the experiment (eg: if somebody went to the gym twice a week, they should still do that as this will eliminate many variables that can affect body weight)
-- After Nicotine consumption of experiment group has reached pre-determined level, maintain constant nicotine consumption and collect weight data for some more days to confirm the trend
+Use "post-test-only two treatment comparison"
+- Measure weight of all participants (at a specific time of day such as before lunch at 12:00)
+- Start treatment by assigning users randomly to patch or vaping group. All the groups will start consuming Nicotine in linearly increasing amounts. The amount will increase at the same rate for everybody till a pre-determined level through their respective sources of patch or vape. (between subject design)
+- The nicotine consumed for all participants on any day will always be the same.
+- After Nicotine consumption has reached pre-determined target level, stop.
+- Measure weight of all participants once again in the same situation as before in point 1
+- To address history threats, all participants should only perform the same amount of exercise (so that the weight loss can only be from Nicotine). We are already monitoring calories eaten so that is accounted for.
+- To address mortality threat, recruit extra participants to the study.
 
 ## Measures
 Describe the measure that will be used
 
-Change in body weight from starting consuming Nicotine.
+The delta in body weight (Weight at end of experiment - weight at start of experiment).
 
 ## Participants
 Describe which participants will recruit in the study and how they will be recruited
 
-Users that do not consume Nicotine. Users that consume can also be used but there can be other factors involved like the body adapting to the Nicotine and responding less or not responding at all.
+Users that do not consume Nicotine are ideal for this experiment because users that consume Nicotine can have developed resistance to Nicotine. They can be recruited through social media and flyers in different parts of the country and cities to attract a diverse group of participants. StackOverflow [<span style="color:blue">says</span>](https://stats.stackexchange.com/questions/37993/is-there-a-minimum-sample-size-required-for-the-t-test-to-be-valid) says t-test is designed for small sample sizes and there is no minimum size. Intuitively, a few hundred participants should be sufficient, more are welcome.
 
 ## Suggested statistical analyses
 Describe the statistical test you suggest to care out on the collected data
 
-t-test. Compare weight lost between the three types of consuming nicotine to see if some perform statistically better at losing weight than others.
+t-test
 
 # Part 2 - Generalized linear models
 
