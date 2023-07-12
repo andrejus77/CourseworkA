@@ -119,32 +119,29 @@ synthetic_data <- data.frame(Candidate=character(), score=integer(),
 n_c <- 3
 n_p <- 100
 B0 <- 0
-B1_c <- rnorm(n_c, 0, 3)
 
-Trump <- rnorm(n_p, 0, 1.5)
+Trump <- rnorm(n_p, -2, 1.5)
 Hillary <- rnorm(n_p, 0, 2)
-Bernie <- rnorm(n_p, 0, 1)
-cintercepts <- c(-2, 0, 3)
+Bernie <- rnorm(n_p, 3, 1)
 
 labels=c("Donald Trump", "Hillary Clinton", "Bernie Sanders")
+
 for (i in 1:n_p) {
-  err <- rnorm(1, 0, 1)
-  l_m <- B0 + cintercepts[1] + Trump[i] + err
+  l_m <- B0 + Trump[i]
   newrow <- data.frame(Candidate=labels[1], score=round(l_m, 0))
   synthetic_data <- rbind(synthetic_data,newrow)
 }
 for (i in 1:n_p) {
-  err <- rnorm(1, 0, 1)
-  l_m <- B0 + cintercepts[2] + Hillary[i] + err
+  l_m <- B0 + Hillary[i]
   newrow <- data.frame(Candidate=labels[2], score=round(l_m, 0))
   synthetic_data <- rbind(synthetic_data,newrow)
 }
 for (i in 1:n_p) {
-  err <- rnorm(1, 0, 1)
-  l_m <- B0 + cintercepts[3] + Bernie[i] + err
+  l_m <- B0 + Bernie[i]
   newrow <- data.frame(Candidate=labels[3], score=round(l_m, 0))
   synthetic_data <- rbind(synthetic_data,newrow)
 }
+
 ```
 
 ### Collecting tweets, and data preparation
@@ -158,6 +155,7 @@ output pdf file.
 
 #setwd("C:\Users\Andrej\Documents\School\Q4\SeminarResearchMethod") 
 # apple , note use / instead of \, which used by windows
+#devtools::install_github("rmcelreath/rethinking")
 library(rethinking)
 library(BayesianFirstAid)
 library(pander)
@@ -241,7 +239,7 @@ each individual/organisation, and provide interpretation
 ```{r}
 #include your analysis code and output in the document
 boxplot(score ~ Candidate, data=semFrame, main="Sentiment", xlab="Candidate", ylab="Sentiment score")
-#boxplot(score ~ Candidate, data=synthetic_data, main="Sentiment", xlab="Candidate", ylab="Sentiment score")
+boxplot(score ~ Candidate, data=synthetic_data, main="Sentiment", xlab="Candidate", ylab="Sentiment score")
 ```
 
 We can see that the mean for each candidate is very close to 0, however the spread of the sentiment scores is wider for Donald Trump and more narrow for Hillary and Bernie. The top 25% is also highest for Trump while the low 25% is lowest for Hillary.
@@ -1042,8 +1040,7 @@ thereby assuming a Gaussian distribution for the scores, determine:
 library(nlme)
 randomIntercept <- lme(score ~ 1, data = set, random = ~1|subject, method = "ML", control = list(opt="optim"))
 randomSession <- update(randomIntercept, .~. + session)
-sessionSubject <- update(randomSession, random = ~session|subject)
-anova.lme(randomIntercept,randomSession, sessionSubject)
+anova.lme(randomIntercept,randomSession)
 summary(randomSession)
 Anova(randomSession)
 intervals(randomSession, 0.95)
@@ -1060,11 +1057,12 @@ drawn.
 A multilevel analysis was performed on the learning dataset taking the session
 as a fixed intercept and the subject id as a random intercept. The results
 showed a significant effects of the session on the test score (t(260) = 62.4, 
-p < 0.001) which were also shown by the AICc scores.
+p < 0.001), (X²(1) = 3921.2, df = 1, p < 0.001) including when compared to 
+the random intercept (L(4) = 723.05, p < 0.0001) which was also shown by the lower AICc scores.
 The relationship between the session and test score showed significant
-variance in intercepts accross sessions, SD = 3.84 (95% Cl 2.87, 5.14),
-X²(1) = 3921.2, df = 1, p \< 0.001. In addition, We found that the interclass
-correlation between participants is very high (0.94).
+variance in intercepts across sessions, SD = 3.84 (95% Cl 2.87, 5.14). 
+In addition, We found that the interclass correlation between 
+participants is very high (0.94).
 
 
 ## Bayesian approach
@@ -1158,10 +1156,11 @@ plot(compare(m0,m1,m2))
 Examine the estimate of parameters of the model with best fit, and
 provide a brief interpretation.
 
-We can see that all coefficients are above 0 which means they are all relevant for the performance of the model.
+We can see that the means of all coefficients are above 0 which means they are all relevant for the performance of the model, with a and sigma_subject having a higher mean and standard deviations of 0.88 and 0.61 while b and sigma have lower means around 1 but also smaller standard deviations of 0.02 and 0.04 with their confidence intervals not falling bellow 0.
 
 
 ```{r}
 #include your code and output in the document
 plot(precis(m2, prob=.95))
+precis(m2, prob=.95)
 ```
