@@ -64,17 +64,18 @@ Describe how the experiment will be executed step by step
 
 Use "post-test-only two treatment comparison"
 - Measure weight of all participants (at a specific time of day such as before lunch at 12:00)
-- Start treatment by assigning users randomly to patch or vaping group. All the groups will start consuming Nicotine in linearly increasing amounts. The amount will increase at the same rate for everybody till a pre-determined level through their respective sources of patch or vape. (between subject design)
+- Start treatment by assigning users randomly to patch or vaping group with equal probability. All the groups will start consuming Nicotine in linearly increasing amounts. The amount will increase at the same rate for everybody till a pre-determined level through their respective sources of patch or vape. (between subject design).
 - The nicotine consumed for all participants on any day will always be the same.
 - After Nicotine consumption has reached pre-determined target level, stop.
 - Measure weight of all participants once again in the same situation as before in point 1
+- Possible values can be that each participant initially consumes 5mg of Nicotine each day. Every week the amount is increased by 2mg till 15mg/day is reached.
 - To address history threats, all participants should only perform the same amount of exercise (so that the weight loss can only be from Nicotine). We are already monitoring calories eaten so that is accounted for.
 - To address mortality threat, recruit extra participants to the study.
 
 ## Measures
 Describe the measure that will be used
 
-The delta in body weight (Weight at end of experiment - weight at start of experiment).
+The delta in body weight (Weight at end of experiment - weight at start of experiment). The dataset will be two array of floats (one array for delta in weight for vaping and other for delta in weight in patch).
 
 ## Participants
 Describe which participants will recruit in the study and how they will be recruited
@@ -82,9 +83,9 @@ Describe which participants will recruit in the study and how they will be recru
 Users that do not consume Nicotine are ideal for this experiment because users that consume Nicotine can have developed resistance to Nicotine. They can be recruited through social media and flyers in different parts of the country and cities to attract a diverse group of participants. StackOverflow [<span style="color:blue">says</span>](https://stats.stackexchange.com/questions/37993/is-there-a-minimum-sample-size-required-for-the-t-test-to-be-valid) says t-test is designed for small sample sizes and there is no minimum size. Intuitively, a few hundred participants should be sufficient, more are welcome.
 
 ## Suggested statistical analyses
-Describe the statistical test you suggest to care out on the collected data
+Describe the statistical test you suggest to care out on the collected data.
 
-t-test
+t-test: The standard textbook t-test will be applied to determine if the results are statistically significant. t-test is selected because we want to compare two populations to test a hypothesis. If the number of participants is sufficiently large i.e. it can be turned into a standard normal distribution, z-test can be used.
 
 # Part 2 - Generalized linear models
 
